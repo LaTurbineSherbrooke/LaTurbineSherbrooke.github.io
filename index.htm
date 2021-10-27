@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Volkhov:ital@0;1&display=swap" rel="stylesheet">
+    <style>
+        html {
+            font-family: 'Volkhov', serif;
+            margin: 0;
+            padding: 0;
+            font-size: 2.85vw;
+            line-height: 1.4;
+        }
+
+        body {
+            margin: 20px;
+        }
+
+        h3,
+        h1 {
+            font-weight: 400;
+            margin: 0;
+        }
+
+        img.logo {
+            max-width: 60vw;
+        }
+
+        hr {
+            border: 0;
+            margin: 0;
+            margin-bottom: 1rem;
+            border-bottom: 1vw #D61924 solid;
+        }
+
+        h3 {
+            min-height: 1em;
+            margin-bottom: 2vw;
+        }
+
+        h1 {
+            min-height: 1em;
+            font-size: 1.9em;
+            margin-bottom: 1vw;
+        }
+
+        .imagebox {
+            display: block;
+            min-height: 30vw;
+            background-color: #eee;
+            position: relative;
+        }
+        .imagebox img {
+            width: 100%;
+            height: auto;
+        }
+        .imagebox input {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            top: 0;
+            opacity: 0.000001;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="logo.jpg" alt="" class="logo">
+    <hr>
+    <h3 contenteditable="">Chronique objectivement neutre super ou pas on ne sai</h3>
+    <h1 contenteditable="">La ville beaucoup mieux servie par les dynasties politiques que par les partis</h1>
+    <label for="el" class="imagebox">
+        <input id="el" type="file" onchange="readURL(this);">
+        <img src="" alt="" style="display: none;" id="img">
+    </label>
+    <script>
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    var el = document.getElementById("img");
+                    el.src = e.target.result
+                    el.style.display = 'block'
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+    </script>
+</body>
+
+</html>
