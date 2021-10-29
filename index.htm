@@ -40,10 +40,14 @@
             border-bottom: 1vw #D61924 solid;
         }
 
-        h3 {
+        h3,
+        .credit{
             min-height: 1em;
         }
-
+        .credit {
+            font-size: 1rem;
+            text-align: right;
+        }
         h1 {
             min-height: 1em;
             font-size: 1.9em;
@@ -80,6 +84,7 @@
         <input id="el" type="file" onchange="readURL(this);">
         <img src="" alt="" style="display: none;" id="img">
     </label>
+    <p class="credit" contenteditable=""></p> 
     <script>
         function readURL(input) {
             if (input.files && input.files[0]) {
